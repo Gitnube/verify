@@ -13,7 +13,8 @@ public:
 signals:
 
 private slots:
-    void AlarmClockExisting();
+    void alarmClockExisting();
+    void setSoundFileNameAlarmTest();
 };
 
 #endif // ALARMCLOCK_TEST_H
