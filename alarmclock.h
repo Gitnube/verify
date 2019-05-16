@@ -2,6 +2,7 @@
 #define ALARMCLOCK_H
 
 #include "QString"
+#include "QTime"
 
 class AlarmClock
 {
@@ -17,6 +18,8 @@ public:
     \return название файла мелодии
     */
     QString getSoundFileName();
+    void setTime(QTime time);
+    QTime getTime();
 private:
     bool fileNameType;
 };

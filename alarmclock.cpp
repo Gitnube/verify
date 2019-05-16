@@ -18,3 +18,13 @@ QString AlarmClock::getSoundFileName()
         return "alarm.mp3";
     else return "other_alarm.mp3";
 }
+
+void AlarmClock::setTime(QTime time)
+{//todo реализовать метод setTime
+
+}
+
+QTime AlarmClock::getTime()
+{//todo реализовать метод getTime
+    return QTime(0,0);
+}
