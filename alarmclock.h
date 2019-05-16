@@ -22,6 +22,7 @@ public:
     QTime getTime();
 private:
     bool fileNameType;
+    bool timeType;
 };
 
 #endif // ALARMCLOCK_H
