@@ -42,4 +42,14 @@ void AlarmClock_test::setTime0Test()
     QCOMPARE(res,time);
 }
 
+void AlarmClock_test::setTime7_30Test()
+{
+    QTime time = QTime(7,30);
+    QTime res;
+    AlarmClock *ac = new AlarmClock();
+    ac->setTime(time);
+    res = ac->getTime();
+    QCOMPARE(res,time);
+}
+
 QTEST_MAIN(AlarmClock_test)
