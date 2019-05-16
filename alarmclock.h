@@ -18,7 +18,15 @@ public:
     \return название файла мелодии
     */
     QString getSoundFileName();
+    /*!
+    Устанавливает время запуска мелодии будильника
+    \param time время запуска мелодии
+    */
     void setTime(QTime time);
+    /*!
+    Возвращает время запуска мелодии будильника
+    \return время запуска мелодии
+    */
     QTime getTime();
 private:
     bool fileNameType;
