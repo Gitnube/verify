@@ -52,4 +52,15 @@ void AlarmClock_test::setTime7_30Test()
     QCOMPARE(res,time);
 }
 
-//QTEST_MAIN(AlarmClock_test)
+void AlarmClock_test::setSoundFileNameAlarm3Test()
+{
+    QString fileName;
+    QString res;
+    fileName = "alarmalarm.mp3";
+    AlarmClock *ac = new AlarmClock();
+    ac->setSoundFileName(fileName);
+    res = ac->getSoundFileName();
+    QCOMPARE(res,fileName);
+}
+
+QTEST_MAIN(AlarmClock_test)
