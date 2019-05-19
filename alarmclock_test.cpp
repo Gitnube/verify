@@ -129,4 +129,14 @@ void AlarmClock_test::setSoundFileNameOtherAlarmGifTest()
     QCOMPARE(res,oldFileName);
 }
 
+void AlarmClock_test::setTime12Test()
+{
+    QTime time = QTime(12,00);
+    QTime res;
+    AlarmClock *ac = new AlarmClock();
+    ac->setTime(time);
+    res = ac->getTime();
+    QCOMPARE(res,time);
+}
+
 QTEST_MAIN(AlarmClock_test)
