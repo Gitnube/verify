@@ -7,7 +7,8 @@ AlarmClock::AlarmClock()
 
 void AlarmClock::setSoundFileName(QString fileName)
 {
-    soundFileName = fileName;
+    if(fileName != "alarm.mp4")
+        soundFileName = fileName;
 }
 
 QString AlarmClock::getSoundFileName()
