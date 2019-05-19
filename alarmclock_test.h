@@ -20,6 +20,7 @@ private slots:
     void setTime7_30Test();
     void setSoundFileNameAlarm3Test();
     void setSoundFileNameAlarmMp4Test();
+    void setSoundFileNameOtherAlarmMp4Test();
 };
 
 #endif // ALARMCLOCK_TEST_H

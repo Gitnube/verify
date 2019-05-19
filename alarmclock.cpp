@@ -6,7 +6,7 @@ AlarmClock::AlarmClock()
 }
 
 void AlarmClock::setSoundFileName(QString fileName)
-{
+{//todo реализовать проверку на формат, отличный от mp3
     if(fileName != "alarm.mp4")
         soundFileName = fileName;
 }
