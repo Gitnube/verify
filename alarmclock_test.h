@@ -25,6 +25,7 @@ private slots:
     void setSoundFileNameAlarmGifTest();
     void setSoundFileNameOtherAlarmGifTest();
     void setTime12Test();
+    void getPlayingStateTest();
 };
 
 #endif // ALARMCLOCK_TEST_H

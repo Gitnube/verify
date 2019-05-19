@@ -139,4 +139,10 @@ void AlarmClock_test::setTime12Test()
     QCOMPARE(res,time);
 }
 
+void AlarmClock_test::getPlayingStateTest()
+{
+    AlarmClock *ac = new AlarmClock();
+    QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
+}
+
 QTEST_MAIN(AlarmClock_test)
