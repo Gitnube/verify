@@ -27,6 +27,7 @@ private slots:
     void setTime12Test();
     void getPlayingStateTest();
     void getPlayingStateActiveAlarmTest();
+    void getPlayingStateWithoutTimeout();
 };
 
 #endif // ALARMCLOCK_TEST_H

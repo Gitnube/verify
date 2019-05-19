@@ -154,4 +154,13 @@ void AlarmClock_test::getPlayingStateActiveAlarmTest()
     QTRY_COMPARE_WITH_TIMEOUT(ac->getPlayingState(),QMediaPlayer::PlayingState,2);
 }
 
+void AlarmClock_test::getPlayingStateWithoutTimeout()
+{
+    AlarmClock *ac = new AlarmClock();
+    ac->setTime(QTime::currentTime().addSecs(1));
+    ac->setSoundFileName("alarm.mp3");
+    ac->launch();
+    QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
+}
+
 QTEST_MAIN(AlarmClock_test)
