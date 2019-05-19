@@ -30,7 +30,7 @@ public:
     QTime getTime();
 private:
     QString soundFileName;
-    bool timeType;
+    QTime alarmTime;
 };
 
 #endif // ALARMCLOCK_H

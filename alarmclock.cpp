@@ -18,15 +18,11 @@ QString AlarmClock::getSoundFileName()
 }
 
 void AlarmClock::setTime(QTime time)
-{//todo реализовать метод setTime
-    if(time == QTime(0,0))
-        timeType = true;
-    else timeType = false;
+{
+    alarmTime = time;
 }
 
 QTime AlarmClock::getTime()
-{//todo реализовать метод getTime
-    if(timeType)
-        return QTime(0,0);
-    else return QTime(7,30);
+{
+    return alarmTime;
 }
