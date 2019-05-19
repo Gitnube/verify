@@ -29,7 +29,7 @@ public:
     */
     QTime getTime();
 private:
-    bool fileNameType;
+    QString soundFileName;
     bool timeType;
 };
 
