@@ -13,7 +13,9 @@ void AlarmClock::setSoundFileName(QString fileName)
 
 QString AlarmClock::getSoundFileName()
 {
-    return soundFileName;
+    if(soundFileName != "other_alarm.mp4")
+        return soundFileName;
+    else return "";
 }
 
 void AlarmClock::setTime(QTime time)
