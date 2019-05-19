@@ -52,4 +52,4 @@ void AlarmClock_test::setTime7_30Test()
     QCOMPARE(res,time);
 }
 
-QTEST_MAIN(AlarmClock_test)
+//QTEST_MAIN(AlarmClock_test)

@@ -26,13 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         alarmclock.cpp \
-        alarmclock_test.cpp
+        alarmclock_test.cpp \
+        mainwindow.cpp\
+        main.cpp
 
 HEADERS += \
         alarmclock.h \
-        alarmclock_test.h
+        alarmclock_test.h\
+        mainwindow.h
 
-FORMS +=
+FORMS += mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
