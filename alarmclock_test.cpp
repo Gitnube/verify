@@ -101,7 +101,7 @@ void AlarmClock_test::repeatSetSoundFileNameOtherAlarmMp4Test()
     QCOMPARE(res,oldFileName);
 }
 
-void AlarmClock_test::repeatSetSoundFileNameAlarmGifTest()
+void AlarmClock_test::setSoundFileNameAlarmGifTest()
 {
     QString fileName, oldFileName;
     QString res;
@@ -110,6 +110,20 @@ void AlarmClock_test::repeatSetSoundFileNameAlarmGifTest()
     ac->setSoundFileName(fileName);
     oldFileName = ac->getSoundFileName();
     fileName = "alarm.gif";
+    ac->setSoundFileName(fileName);
+    res = ac->getSoundFileName();
+    QCOMPARE(res,oldFileName);
+}
+
+void AlarmClock_test::setSoundFileNameOtherAlarmGifTest()
+{
+    QString fileName, oldFileName;
+    QString res;
+    AlarmClock *ac = new AlarmClock();
+    fileName = "alarm.mp3";
+    ac->setSoundFileName(fileName);
+    oldFileName = ac->getSoundFileName();
+    fileName = "other_alarm.gif";
     ac->setSoundFileName(fileName);
     res = ac->getSoundFileName();
     QCOMPARE(res,oldFileName);

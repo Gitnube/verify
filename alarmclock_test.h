@@ -22,7 +22,8 @@ private slots:
     void setSoundFileNameAlarmMp4Test();
     void setSoundFileNameOtherAlarmMp4Test();
     void repeatSetSoundFileNameOtherAlarmMp4Test();
-    void repeatSetSoundFileNameAlarmGifTest();
+    void setSoundFileNameAlarmGifTest();
+    void setSoundFileNameOtherAlarmGifTest();
 };
 
 #endif // ALARMCLOCK_TEST_H
