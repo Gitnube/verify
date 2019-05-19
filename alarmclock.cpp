@@ -7,15 +7,13 @@ AlarmClock::AlarmClock()
 
 void AlarmClock::setSoundFileName(QString fileName)
 {//todo реализовать проверку на формат, отличный от mp3
-    if(fileName != "alarm.mp4")
+    if(fileName != "alarm.mp4" && fileName != "other_alarm.mp4")
         soundFileName = fileName;
 }
 
 QString AlarmClock::getSoundFileName()
 {
-    if(soundFileName != "other_alarm.mp4")
-        return soundFileName;
-    else return "";
+    return soundFileName;
 }
 
 void AlarmClock::setTime(QTime time)
