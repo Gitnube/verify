@@ -3,6 +3,7 @@
 
 #include "QString"
 #include "QTime"
+#include "QMediaPlayer"
 
 class AlarmClock
 {
@@ -28,6 +29,7 @@ public:
     \return время запуска мелодии
     */
     QTime getTime();
+    QMediaPlayer::State getPlayingState();
 private:
     QString soundFileName;
     QTime alarmTime;

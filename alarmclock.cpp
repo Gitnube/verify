@@ -26,3 +26,8 @@ QTime AlarmClock::getTime()
 {
     return alarmTime;
 }
+
+QMediaPlayer::State AlarmClock::getPlayingState()
+{
+    return QMediaPlayer::StoppedState;
+}
