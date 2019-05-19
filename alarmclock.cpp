@@ -2,7 +2,7 @@
 
 AlarmClock::AlarmClock()
 {
-
+    isActive = false;
 }
 
 void AlarmClock::setSoundFileName(QString fileName)
@@ -28,6 +28,13 @@ QTime AlarmClock::getTime()
 }
 
 QMediaPlayer::State AlarmClock::getPlayingState()
+{//todo реализовать getPlayingState
+    if(isActive)
+        return QMediaPlayer::PlayingState;
+    else return QMediaPlayer::StoppedState;
+}
+
+void AlarmClock::launch()
 {
-    return QMediaPlayer::StoppedState;
+    isActive = true;
 }

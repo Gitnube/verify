@@ -30,9 +30,11 @@ public:
     */
     QTime getTime();
     QMediaPlayer::State getPlayingState();
+    void launch();
 private:
     QString soundFileName;
     QTime alarmTime;
+    bool isActive;
 };
 
 #endif // ALARMCLOCK_H
