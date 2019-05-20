@@ -33,11 +33,7 @@ QMediaPlayer::State AlarmClock::getPlayingState() const
 
 void AlarmClock::launch()
 {
-    int interval;
     QTimer timer;
     player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
-    if(QTime::currentTime().msecsTo(alarmTime) > 1000)
-        interval = 1500;
-    else interval = 1000;
-    timer.singleShot(interval,&player,SLOT(play()));
+    timer.singleShot(QTime::currentTime().msecsTo(alarmTime),&player,SLOT(play()));
 }
