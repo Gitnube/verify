@@ -2,7 +2,6 @@
 
 AlarmClock::AlarmClock()
 {
-    isActive = false;
 }
 
 void AlarmClock::setSoundFileName(QString fileName)
@@ -27,14 +26,14 @@ QTime AlarmClock::getTime()
     return alarmTime;
 }
 
-QMediaPlayer::State AlarmClock::getPlayingState()
-{//todo реализовать getPlayingState
-    if(isActive)
-        return QMediaPlayer::PlayingState;
-    else return QMediaPlayer::StoppedState;
+QMediaPlayer::State AlarmClock::getPlayingState() const
+{
+    return player.state();
 }
 
 void AlarmClock::launch()
 {
-    isActive = true;
+    QTimer timer;
+    player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
+    timer.singleShot(100,&player,SLOT(play()));
 }

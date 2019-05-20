@@ -4,6 +4,8 @@
 #include "QString"
 #include "QTime"
 #include "QMediaPlayer"
+#include "QDir"
+#include "QTimer"
 
 class AlarmClock
 {
@@ -29,12 +31,12 @@ public:
     \return время запуска мелодии
     */
     QTime getTime();
-    QMediaPlayer::State getPlayingState();
+    QMediaPlayer::State getPlayingState() const;
     void launch();
 private:
     QString soundFileName;
     QTime alarmTime;
-    bool isActive;
+    QMediaPlayer player;
 };
 
 #endif // ALARMCLOCK_H
