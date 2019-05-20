@@ -35,5 +35,5 @@ void AlarmClock::launch()
 {
     QTimer timer;
     player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
-    timer.singleShot(100,&player,SLOT(play()));
+    timer.singleShot(1000,&player,SLOT(play()));
 }
