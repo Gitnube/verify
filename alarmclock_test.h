@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QtTest/QtTest>
+#include <QTest>
 
 class AlarmClock_test : public QObject
 {
@@ -28,6 +29,7 @@ private slots:
     void getPlayingStateTest();
     void getPlayingStateActiveAlarmTest();
     void getPlayingStateWithoutTimeout();
+    void getPlayingStateDuring1SecTest();
 };
 
 #endif // ALARMCLOCK_TEST_H
