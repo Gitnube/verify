@@ -2,6 +2,7 @@
 
 AlarmClock::AlarmClock()
 {
+    fDuration = false;
 }
 
 void AlarmClock::setSoundFileName(QString fileName)
