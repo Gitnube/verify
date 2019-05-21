@@ -35,6 +35,7 @@ private slots:
     void setPlayingDuration1SecTest();
     void setPlayingDuration2SecTest();
     void setPlayingDuration1SecAlarm2Test();
+    void playingFullDurationAlarm2Test();
 };
 
 #endif // ALARMCLOCK_TEST_H
