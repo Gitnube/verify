@@ -37,7 +37,7 @@ void AlarmClock::launch()
     QTimer timer,timerStop;
     QMediaPlaylist *playlist;
     playlist = new QMediaPlaylist();
-    playlist->addMedia(QUrl::fromLocalFile(QDir::currentPath() + "/" + soundFileName));
+    playlist->addMedia(QUrl::fromLocalFile(soundFileName));
     player.setPlaylist(playlist);
     timer.singleShot(QTime::currentTime().msecsTo(alarmTime),&player,SLOT(play()));
     if(duration != -1)

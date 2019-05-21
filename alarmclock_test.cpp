@@ -277,4 +277,4 @@ void AlarmClock_test::playingFullDurationAlarm2StopTest()
 
 
 
-QTEST_MAIN(AlarmClock_test)
+//QTEST_MAIN(AlarmClock_test)

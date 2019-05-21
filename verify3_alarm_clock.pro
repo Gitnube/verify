@@ -27,8 +27,8 @@ CONFIG += c++11
 SOURCES += \
         alarmclock.cpp \
         alarmclock_test.cpp \
-        mainwindow.cpp
-#        main.cpp
+        mainwindow.cpp\
+        main.cpp
 
 HEADERS += \
         alarmclock.h \

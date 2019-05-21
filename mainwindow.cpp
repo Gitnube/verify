@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QFileDialog"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,25 +14,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_soundFileNameLE_textChanged(const QString &arg1)
-{
-    alarm.setSoundFileName(arg1);
-    updateInfoLabel();
-}
-
-void MainWindow::updateInfoLabel()
-{
-    ui->alarmInfoLabel->setText(
-                "Параметры будильника: мелодия - "
-                + alarm.getSoundFileName()
-                + ", время - "
-                + alarm.getTime().toString()
-                );
-}
-
 void MainWindow::on_timeTE_userTimeChanged(const QTime &time)
 {
     alarm.setTime(time);
-    updateInfoLabel();
+}
+
+void MainWindow::on_soundFileNameSelect_clicked()
+{
+    QString fileName;
+    fileName = QFileDialog::getOpenFileName(
+                this,
+                "Выберите мелодию будильника...",
+                QDir::currentPath(),
+                tr("Mp3 Files (*.mp3)")
+                );
+    alarm.setSoundFileName(fileName);
+    ui->soundFileNameValue->setText(fileName);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    alarm.launch();
 }
