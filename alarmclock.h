@@ -42,6 +42,10 @@ public:
       с указанной продолжительностью
     */
     void launch();
+    /*!
+    Устанавливает длительность воспроизведения мелодии
+    \param secs длительность воспроизведения мелодии
+    */
     void setPlayingDuration(int secs);
 private:
     QString soundFileName;
