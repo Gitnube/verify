@@ -33,6 +33,10 @@ public:
     */
     QTime getTime();
     QMediaPlayer::State getPlayingState() const;
+    /*!
+      Включает будильник, настраивает таймеры на воспроизведение заданной мелодии в заданное время
+      с указанной продолжительностью
+    */
     void launch();
     void setPlayingDuration(int secs);
 private:
