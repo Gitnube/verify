@@ -212,4 +212,16 @@ void AlarmClock_test::setPlayingDuration1SecTest()
     QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
 }
 
+void AlarmClock_test::setPlayingDuration2SecTest()
+{
+    QTime time;
+    time = QTime::currentTime().addMSecs(1000);
+    AlarmClock *ac = new AlarmClock();
+    ac->setTime(time);
+    ac->setSoundFileName("alarm1.mp3");
+    ac->setPlayingDuration(2);
+    ac->launch();
+    QTest::qWait(QTime::currentTime().msecsTo(time)+1995);
+    QCOMPARE(ac->getPlayingState(),QMediaPlayer::PlayingState);
+}
 QTEST_MAIN(AlarmClock_test)
