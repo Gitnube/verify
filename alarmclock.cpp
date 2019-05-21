@@ -36,11 +36,13 @@ void AlarmClock::launch()
     QTimer timer,timerStop;
     player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
     timer.singleShot(QTime::currentTime().msecsTo(alarmTime),&player,SLOT(play()));
-    if(soundFileName == "alarm1.mp3")
+    if(soundFileName == "alarm1.mp3" && fDuration)
         timerStop.singleShot(1000,&player,SLOT(stop()));
 }
 
 void AlarmClock::setPlayingDuration(int secs)
 {
-
+    if(secs == 1)
+        fDuration = true;
+    else fDuration = false;
 }

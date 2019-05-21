@@ -38,6 +38,7 @@ private:
     QString soundFileName;
     QTime alarmTime;
     QMediaPlayer player;
+    bool fDuration;
 };
 
 #endif // ALARMCLOCK_H
