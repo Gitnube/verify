@@ -171,7 +171,7 @@ void AlarmClock_test::getPlayingStateDuring1SecTest()
     ac->setTime(time);
     ac->setSoundFileName("alarm.mp3");
     ac->launch();
-    QTest::qWait(QTime::currentTime().msecsTo(time));
+    QTest::qWait(QTime::currentTime().msecsTo(time)-5);
     QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
 }
 
@@ -183,7 +183,7 @@ void AlarmClock_test::getPlayingStateDuring1_5SecTest()
     ac->setTime(time);
     ac->setSoundFileName("alarm.mp3");
     ac->launch();
-    QTest::qWait(QTime::currentTime().msecsTo(time));
+    QTest::qWait(QTime::currentTime().msecsTo(time)-5);
     QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
 }
 
@@ -195,20 +195,20 @@ void AlarmClock_test::getPlayingStateDuring1_6SecTest()
     ac->setTime(time);
     ac->setSoundFileName("alarm.mp3");
     ac->launch();
-    QTest::qWait(QTime::currentTime().msecsTo(time));
+    QTest::qWait(QTime::currentTime().msecsTo(time)-5);
     QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
 }
 
 void AlarmClock_test::setPlayingDuration1SecTest()
 {
     QTime time;
-    time = QTime::currentTime().addMSecs(20);
+    time = QTime::currentTime().addMSecs(1000);
     AlarmClock *ac = new AlarmClock();
     ac->setTime(time);
     ac->setSoundFileName("alarm1.mp3");
     ac->setPlayingDuration(1);
     ac->launch();
-    QTest::qWait(QTime::currentTime().msecsTo(time)+1001);
+    QTest::qWait(QTime::currentTime().msecsTo(time)+1005);
     QCOMPARE(ac->getPlayingState(),QMediaPlayer::StoppedState);
 }
 

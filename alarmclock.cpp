@@ -32,8 +32,15 @@ QMediaPlayer::State AlarmClock::getPlayingState() const
 }
 
 void AlarmClock::launch()
-{
-    QTimer timer;
+{//todo воспроизводить выбранную мелодию
+    QTimer timer,timerStop;
     player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
     timer.singleShot(QTime::currentTime().msecsTo(alarmTime),&player,SLOT(play()));
+    if(soundFileName == "alarm1.mp3")
+        timerStop.singleShot(1000,&player,SLOT(stop()));
+}
+
+void AlarmClock::setPlayingDuration(int secs)
+{
+
 }

@@ -33,6 +33,7 @@ public:
     QTime getTime();
     QMediaPlayer::State getPlayingState() const;
     void launch();
+    void setPlayingDuration(int secs);
 private:
     QString soundFileName;
     QTime alarmTime;
