@@ -2,7 +2,7 @@
 
 AlarmClock::AlarmClock()
 {
-    fDuration = false;
+    duration = -1;
 }
 
 void AlarmClock::setSoundFileName(QString fileName)
@@ -35,15 +35,17 @@ QMediaPlayer::State AlarmClock::getPlayingState() const
 void AlarmClock::launch()
 {//todo воспроизводить выбранную мелодию
     QTimer timer,timerStop;
-    player.setMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
+    QMediaPlaylist *playlist;
+    playlist = new QMediaPlaylist();
+    playlist->addMedia(QUrl::fromLocalFile(QDir::currentPath() + "/alarm.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+    player.setPlaylist(playlist);
     timer.singleShot(QTime::currentTime().msecsTo(alarmTime),&player,SLOT(play()));
-    if((soundFileName == "alarm1.mp3" || soundFileName == "alarm2.mp3") && fDuration)
-        timerStop.singleShot(1000,&player,SLOT(stop()));
+    if((soundFileName == "alarm1.mp3" || soundFileName == "alarm2.mp3") && duration != -1)
+        timerStop.singleShot(QTime::currentTime().msecsTo(alarmTime.addSecs(duration)),&player,SLOT(stop()));
 }
 
 void AlarmClock::setPlayingDuration(int secs)
 {
-    if(secs == 1)
-        fDuration = true;
-    else fDuration = false;
+    duration = secs;
 }

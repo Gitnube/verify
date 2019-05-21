@@ -6,6 +6,7 @@
 #include "QMediaPlayer"
 #include "QDir"
 #include "QTimer"
+#include "QMediaPlaylist"
 
 class AlarmClock
 {
@@ -38,7 +39,7 @@ private:
     QString soundFileName;
     QTime alarmTime;
     QMediaPlayer player;
-    bool fDuration;
+    int duration;
 };
 
 #endif // ALARMCLOCK_H
